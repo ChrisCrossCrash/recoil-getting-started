@@ -1,7 +1,12 @@
 import './App.css'
+import { TodoList } from './components/TodoList'
 
 function App() {
-  return <div className='App'>TODO: Make Recoil stuff.</div>
+  return (
+    <div className='App'>
+      <TodoList />
+    </div>
+  )
 }
 
 export default App
