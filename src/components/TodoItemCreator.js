@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
 import { todoListState } from '../store'
-
-let id = 0
-const getId = () => id++
+import { nanoid } from 'nanoid'
 
 export const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState('')
@@ -13,9 +11,10 @@ export const TodoItemCreator = () => {
     setTodoList((oldTodoList) => [
       ...oldTodoList,
       {
-        id: getId(),
-        text: inputValue,
-        isComplete: false,
+        id: nanoid(),
+        title: inputValue,
+        completed: false,
+        userId: nanoid(),
       },
     ])
     setInputValue('')

@@ -21,9 +21,9 @@ export const filteredTodoListState = selector({
 
     switch (filter) {
       case 'Show Completed':
-        return list.filter((item) => item.isComplete)
+        return list.filter((item) => item.completed)
       case 'Show Uncompleted':
-        return list.filter((item) => !item.isComplete)
+        return list.filter((item) => !item.completed)
       default:
         return list
     }
@@ -35,7 +35,7 @@ export const todoListStatsState = selector({
   get: ({ get }) => {
     const todoList = get(todoListState)
     const totalNum = todoList.length
-    const totalCompletedNum = todoList.filter((item) => item.isComplete).length
+    const totalCompletedNum = todoList.filter((item) => item.completed).length
     const totalUncompletedNum = totalNum - totalCompletedNum
     const percentCompleted =
       totalNum === 0 ? 0 : (totalCompletedNum / totalNum) * 100

@@ -8,7 +8,7 @@ export const TodoItem = ({ item }) => {
   const editItemText = ({ target: { value } }) => {
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
-      text: value,
+      title: value,
     })
 
     setTodoList(newList)
@@ -17,7 +17,7 @@ export const TodoItem = ({ item }) => {
   const toggleItemCompletion = () => {
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
-      isComplete: !item.isComplete,
+      completed: !item.completed,
     })
 
     setTodoList(newList)
@@ -31,10 +31,10 @@ export const TodoItem = ({ item }) => {
 
   return (
     <div>
-      <input type='text' value={item.text} onChange={editItemText} />
+      <input type='text' value={item.title} onChange={editItemText} />
       <input
         type='checkbox'
-        checked={item.isComplete}
+        checked={item.completed}
         onChange={toggleItemCompletion}
       />
       <button onClick={deleteItem}>X</button>
