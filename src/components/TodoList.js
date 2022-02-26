@@ -18,7 +18,7 @@ export const TodoList = () => {
   })
 
   return (
-    <>
+    <div className='todo-list'>
       <TodoListStats />
       <TodoListFilters />
       <TodoItemCreator />
@@ -26,6 +26,6 @@ export const TodoList = () => {
       {todoList.map((todoItem) => (
         <TodoItem key={todoItem.id} item={todoItem} />
       ))}
-    </>
+    </div>
   )
 }

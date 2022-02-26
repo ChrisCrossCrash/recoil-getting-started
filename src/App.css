@@ -3,3 +3,17 @@
   color: white;
   min-height: 100vh;
 }
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.filter {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}

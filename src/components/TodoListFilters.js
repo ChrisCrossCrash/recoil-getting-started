@@ -7,13 +7,13 @@ export const TodoListFilters = () => {
   const updateFilter = ({ target: { value } }) => setFilter(value)
 
   return (
-    <>
-      <label htmlFor='filter-select'>Filter</label>
+    <div className='filter'>
+      <label htmlFor='filter-select'>Filter:</label>
       <select id='filter-select' value={filter} onChange={updateFilter}>
         <option value='Show All'>Show All</option>
         <option value='Show Completed'>Show Completed</option>
         <option value='Show Uncompleted'>Show Uncompleted</option>
       </select>
-    </>
+    </div>
   )
 }
