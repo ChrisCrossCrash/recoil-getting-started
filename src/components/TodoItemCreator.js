@@ -7,7 +7,8 @@ export const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState('')
   const setTodoList = useSetRecoilState(todoListState)
 
-  const addItem = () => {
+  const addItem = (event) => {
+    event.preventDefault()
     setTodoList((oldTodoList) => [
       ...oldTodoList,
       {
@@ -25,9 +26,11 @@ export const TodoItemCreator = () => {
   }
 
   return (
-    <div>
+    <form>
       <input type='text' value={inputValue} onChange={onChange} />
-      <button onClick={addItem}>Add</button>
-    </div>
+      <button type='submit' onClick={addItem}>
+        Add
+      </button>
+    </form>
   )
 }
